@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="documento">
+      <h2 data-cy="documentoDetailsHeading"><span jhiTranslate="minidteApp.documento.detail.title">Documento</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ documento.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="minidteApp.documento.rutEmpresa">Rut Empresa</span></dt>
+        <dd>
+          <span>{{ documento.rutEmpresa }}</span>
+        </dd>
+        <dt><span jhiTranslate="minidteApp.documento.idAmbiente">Id Ambiente</span></dt>
+        <dd>
+          <span>{{ documento.idAmbiente }}</span>
+        </dd>
+        <dt><span jhiTranslate="minidteApp.documento.tipoDocumento">Tipo Documento</span></dt>
+        <dd>
+          <span>{{ documento.tipoDocumento }}</span>
+        </dd>
+        <dt><span jhiTranslate="minidteApp.documento.montoTotal">Monto Total</span></dt>
+        <dd>
+          <span>{{ documento.montoTotal }}</span>
+        </dd>
+        <dt><span jhiTranslate="minidteApp.documento.correoReceptor">Correo Receptor</span></dt>
+        <dd>
+          <span>{{ documento.correoReceptor }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/documento', documento.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

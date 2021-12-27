@@ -1,0 +1,98 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-documento-heading" data-cy="DocumentoCreateUpdateHeading" jhiTranslate="minidteApp.documento.home.createOrEditLabel">
+        Create or edit a Documento
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="minidteApp.documento.rutEmpresa" for="field_rutEmpresa">Rut Empresa</label>
+          <input
+            type="number"
+            class="form-control"
+            name="rutEmpresa"
+            id="field_rutEmpresa"
+            data-cy="rutEmpresa"
+            formControlName="rutEmpresa"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="minidteApp.documento.idAmbiente" for="field_idAmbiente">Id Ambiente</label>
+          <input
+            type="number"
+            class="form-control"
+            name="idAmbiente"
+            id="field_idAmbiente"
+            data-cy="idAmbiente"
+            formControlName="idAmbiente"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="minidteApp.documento.tipoDocumento" for="field_tipoDocumento"
+            >Tipo Documento</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="tipoDocumento"
+            id="field_tipoDocumento"
+            data-cy="tipoDocumento"
+            formControlName="tipoDocumento"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="minidteApp.documento.montoTotal" for="field_montoTotal">Monto Total</label>
+          <input
+            type="number"
+            class="form-control"
+            name="montoTotal"
+            id="field_montoTotal"
+            data-cy="montoTotal"
+            formControlName="montoTotal"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="minidteApp.documento.correoReceptor" for="field_correoReceptor"
+            >Correo Receptor</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="correoReceptor"
+            id="field_correoReceptor"
+            data-cy="correoReceptor"
+            formControlName="correoReceptor"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

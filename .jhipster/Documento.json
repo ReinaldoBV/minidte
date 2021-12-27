@@ -1,0 +1,32 @@
+{
+  "fields": [
+    {
+      "fieldName": "rutEmpresa",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "idAmbiente",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tipoDocumento",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "montoTotal",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "correoReceptor",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "service": "serviceImpl",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": true,
+  "readOnly": false,
+  "pagination": "pagination",
+  "name": "Documento",
+  "changelogDate": "20211227031502"
+}
